@@ -10,6 +10,7 @@ A collection of architecture patterns, memory systems, and automation workflows 
 | [Bot Monitor](./bot-monitor) | Auto-restart critical processes | ✅ Complete |
 | [Heartbeat Integration](./heartbeat) | Periodic task scheduling | ✅ Complete |
 | [Trading Dashboard](./trading-dashboard) | Real-time bot monitoring without servers | ✅ Complete |
+| [System Health Monitor](./system-health-monitor) | Config validation, state reconciliation, API tests | ✅ Complete |
 
 ---
 
@@ -116,6 +117,44 @@ bot.set_running({"pnl_total": 123.45, "trades_total": 50})
 Then open `DASHBOARD_70.html` in your browser.
 
 See [trading-dashboard/](./trading-dashboard/) for full documentation.
+
+---
+
+## 🏥 System Health Monitor
+
+Proactive validation to catch issues before they become problems.
+
+### What It Solves
+- Configuration drift (API keys expire, secrets missing)
+- State files out of sync with actual processes
+- APIs that appear configured but don't actually work
+- Silent failures that go undetected
+
+### Components
+
+1. **Configuration Validator** — Check all required configs and test API keys
+   ```bash
+   python3 validate_config.py
+   ```
+
+2. **State Reconciliation** — Keep state files synchronized with reality
+   ```bash
+   python3 reconcile_state.py --fix
+   ```
+
+3. **API Connectivity Tester** — Verify services are actually working
+   ```bash
+   python3 test_connectivity.py
+   ```
+
+### Why Proactive > Reactive
+
+| Approach | When Problem Detected | Cost |
+|----------|----------------------|------|
+| Reactive monitoring | After failure | High (downtime, data loss) |
+| **Proactive validation** | **Before failure** | **Low (fix during maintenance)** |
+
+See [system-health-monitor/](./system-health-monitor/) for full documentation.
 
 ---
 
