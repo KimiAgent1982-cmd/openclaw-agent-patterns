@@ -9,6 +9,7 @@ A collection of architecture patterns, memory systems, and automation workflows 
 | [Memory System](./memory-system) | Structured long-term memory for agents | ✅ Complete |
 | [Bot Monitor](./bot-monitor) | Auto-restart critical processes | ✅ Complete |
 | [Heartbeat Integration](./heartbeat) | Periodic task scheduling | ✅ Complete |
+| [Trading Dashboard](./trading-dashboard) | Real-time bot monitoring without servers | ✅ Complete |
 
 ---
 
@@ -86,6 +87,35 @@ launchctl load ~/Library/LaunchAgents/com.openclaw.botmonitor.plist
 ```
 
 See [bot-monitor/](./bot-monitor/) for full setup.
+
+---
+
+## 📊 Trading Dashboard
+
+Static HTML dashboard for monitoring trading bots without background processes.
+
+### Problem It Solves
+- Multiple Python dashboard processes conflicting
+- File sync caching issues
+- Git history bloat from dashboard versions
+
+### Solution
+- Static HTML file (no server)
+- Bots write state to JSON files
+- Dashboard reads and displays
+- Opens directly in browser
+
+### Quick Start
+```python
+from bot_state import BotStateWriter
+
+bot = BotStateWriter("my_bot", "My Strategy")
+bot.set_running({"pnl_total": 123.45, "trades_total": 50})
+```
+
+Then open `DASHBOARD_70.html` in your browser.
+
+See [trading-dashboard/](./trading-dashboard/) for full documentation.
 
 ---
 
