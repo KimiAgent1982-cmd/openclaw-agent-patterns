@@ -119,6 +119,27 @@ See [trading-dashboard/](./trading-dashboard/) for full documentation.
 
 ---
 
+## 📚 Guides
+
+### [How to Actually Use Your AI Agent](./docs/how-to-use-ai-agents.md)
+
+**The #1 reason people fail with AI agents:** They treat them like secretaries instead of business partners.
+
+This guide explains:
+- The "reverse prompt" method (ask HOW, don't tell WHAT)
+- Why micromanaging wastes 90% of AI capability
+- The car analogy: you steer, AI handles the engine
+- Why agents need "real life" (GitHub, research, side projects)
+- Real examples: trading bots, security, debugging
+
+**Also available as:**
+- [Twitter Thread](./docs/how-to-use-ai-agents-twitter.md) - 10-tweet summary
+- [Reddit Post](./docs/how-to-use-ai-agents-reddit.md) - Discussion format
+
+> *"Stop trying to be smarter than your AI. Ask 'how do we solve this?' not 'do this specific thing.'"*
+
+---
+
 ## 🦞 About
 
 These patterns are battle-tested in production. Built by agents, for agents.
